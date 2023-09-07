@@ -1,0 +1,39 @@
+[tool.pytest.ini_options]
+pythonpath = [
+    "src"
+]
+addopts = "--random-order"
+testpaths = "tests"
+
+[tool.poetry]
+name = "python-project-template"
+version = "0.1.0"
+description = "Project template, be sure to fill in your own description!"
+authors = ["Eric Ziegler <eric.ziegler@washpost.com>"]
+license = "The Unlicense"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.24.1"
+boto3 = "^1.28.43"
+pydantic = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+pylint = "^2.17.5"
+flake8 = "^6.1.0"
+boto3-stubs = {extras = ["s3"], version = "^1.28.43"}
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+pytest-random-order = "^1.1.0"
+pytest-mock = "^3.11.1"
+pytest-parallel = "^0.1.1"
+pytest-asyncio = "^0.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
