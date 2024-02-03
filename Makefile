@@ -8,13 +8,12 @@ test:
 
 fmt:
 	# Run formatting
-	poetry run black .
+	poetry run ruff format
 
 
 lint:
 	# Run linting
-	poetry run black --check .
-	poetry run flake8 .
-	poetry run pylint src
+	poetry run ruff check
 
-fix: fmt lint
+fix: fmt
+	poetry run ruff check --fix
